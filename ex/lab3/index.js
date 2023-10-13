@@ -1,4 +1,4 @@
- const fs = require('fs');
+const fs = require('fs');
 const http = require('http');
 const os = require('os');
 
@@ -28,18 +28,8 @@ console.log(data);
 // Creating a server
 http
   .createServer((req, res) => {
-    switch (req.url) {
-      case '/api/data':
-        res.setHeader('Content-Type', 'application/json');
-        res.writeHead(200);
-        res.write(JSON.stringify(data));
-        break;
-      case '/api/online':
-        res.setHeader('Content-Type', 'text/plain');
-        res.writeHead(200);
-        res.write(os.uptime().toString());
-        break;
-    }
+    res.writeHead(200);
+    res.write(os.uptime().toString());
     res.end();
   })
   .listen(3000);
