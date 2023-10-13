@@ -2,8 +2,7 @@ const fs = require('fs');
 const http = require('http');
 const os = require('os');
 
-const { data, temp1 } = require('./temp1');
-const { day1 } = require('./day1');
+const { data } = require('./data');
 
 console.log('Hello Node.js');
 
@@ -16,10 +15,10 @@ console.log(exports);
 console.log(module.exports === exports);
 
 // Blocking vs Non-blocking IO
-const content = fs.readFileSync('./day1.js', 'utf8');
+const content = fs.readFileSync('./data.js', 'utf8');
 console.log(content);
 
-fs.readFile('./day1.js', 'utf8', (err, content) => {
+fs.readFile('./data.js', 'utf8', (err, content) => {
   console.log(content);
 });
 
@@ -30,19 +29,19 @@ console.log(data);
 http
   .createServer((req, res) => {
     switch (req.url) {
-      case '/api/temp1':
+      case '/api/data':
         res.setHeader('Content-Type', 'application/json');
         res.writeHead(200);
-        res.write(JSON.stringify(temp1));
+        res.write(JSON.stringify(data));
         break;
-      case '/api/day1':
-        res.setHeader('Content-Type', 'application/json');
+      case '/api/online':
+        res.setHeader('Content-Type', 'text/plain');
         res.writeHead(200);
-        res.write(JSON.stringify(day1));
+        res.write(os.uptime().toString());
         break;
     }
     res.end();
   })
-  .listen(8000);
+  .listen(3000);
 
 console.log('Listening on port 3000');
