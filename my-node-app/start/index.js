@@ -34,14 +34,11 @@ http
         res.writeHead(200);
         res.write(JSON.stringify(data));
         break;
-      case '/api/online':
-        res.setHeader('Content-Type', 'text/plain');
-        res.writeHead(200);
-        res.write(os.uptime().toString());
-        break;
+      
     }
     res.end();
   })
-  .listen(3000);
+  .listen(5000);
 
 console.log('Listening on port 3000');
+
