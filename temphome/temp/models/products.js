@@ -5,13 +5,22 @@ const Product = sequelize.define('Product', {
   name: {
     type: DataTypes.STRING
   },
-  imageURL: {
+  country: {
     type: DataTypes.STRING
   },
-  type: {
+  temp: {
     type: DataTypes.STRING
   },
-  post: {
+  weather: {
+    type: DataTypes.STRING
+  },
+  humidity: {
+    type: DataTypes.STRING
+  },
+  pressure: {
+    type: DataTypes.STRING
+  },
+  speed: {
     type: DataTypes.STRING
   },
   

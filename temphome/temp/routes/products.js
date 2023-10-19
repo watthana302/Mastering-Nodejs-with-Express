@@ -21,28 +21,34 @@ router.get('/:id', async (req, res) => {
 
 let currentProductId = 9;
 router.post('/', async (req, res) => {
-  const { name, imageURL, type,post } = req.body;
+  const { name,country,temp,weather,humidity , pressure,speed } = req.body;
   const product = await Product.create({
     name,
-    imageURL,
-    type,
-    post
+    country,
+    temp,
+    weather,
+    humidity , 
+    pressure,
+    speed
   });
   res.json(product);
 });
 
 router.put('/:id', async (req, res) => {
-  const { name, imageURL, type, post } = req.body;
+  const { name,country,temp,weather,humidity , pressure,speed } = req.body;
   const product = await Product.findOne({
     where: {
       id: req.params.id
     }
   });
 
-  product.name = name;
-  product.imageURL = imageURL;
-  product.type = type;
-  product.post = post;
+  product.name= name;
+  product.country= country;
+  product.temp = temp;
+  product.weather = weather;
+  product.humidity = humidity;
+  product.pressure = pressure;
+  product.speed = speed;
 
   await product.save();
 
