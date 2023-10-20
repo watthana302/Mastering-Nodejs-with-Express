@@ -3,6 +3,10 @@ import './App.css';
 
 import React from 'react';
 import WeatherCard from './components/WeatherCard';
+import { Route, Routes } from 'react-router-dom';
+import Navbar from './components/navbar';
+
+import AddWeatherData from './components/AddWeatherdata';
 
 
 
@@ -11,7 +15,13 @@ import WeatherCard from './components/WeatherCard';
 function App() {
   return (
     <div className="App">
-      <WeatherCard />
+
+      <Navbar/>
+      <Routes> {/* Use Routes instead of Route */}
+            <Route path="/" element={< WeatherCard/>} /> 
+            <Route path="/AddWeatherData" element={< AddWeatherData/>} />
+            
+          </Routes>
     </div>
   );
 }

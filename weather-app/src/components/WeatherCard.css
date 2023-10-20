@@ -1,0 +1,116 @@
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weather-box {
+  border: 1px solid #e0e0e0;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+body{
+  margin: 0px;
+}
+
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  
+  margin-bottom: 20px;
+  position: relative; /* Ensure the z-index works */
+  z-index: 2; /* Increase the z-index to place it on top */
+}
+.navbar h1 {
+  align-items: center;
+}
+
+.search-bar {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 40%;
+  margin-left: auto;
+  margin-bottom: 10px;
+  position: relative; /* Ensure the z-index works */
+  z-index: 2; /* Increase the z-index to place it on top */
+}
+
+
+.city-info {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  position: relative; /* Ensure the z-index works */
+  z-index: 2; /* Increase the z-index to place it on top */
+}
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  position: relative; /* Ensure the z-index works */
+  z-index: 2; /* Increase the z-index to place it on top */
+}
+
+.action-buttons button {
+  border: black;
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: rgb(7, 0, 0);
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative; /* Ensure the z-index works */
+  z-index: 2; /* Increase the z-index to place it on top */
+}
+
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+}
+.mainnav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+  background-color: #333;
+  overflow: hidden;
+}
+.mainnav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mainnav li {
+  float: left;
+}
+
+.mainnav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.mainnav li a:hover {
+  background-color: #111;
+}
