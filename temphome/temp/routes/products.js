@@ -21,13 +21,13 @@ router.get('/:name', async (req, res) => {
 
 let currentProductId = 9;
 router.post('/', async (req, res) => {
-  const { name,country,temp,weather,humidity , pressure,speed } = req.body;
+  const { name, country, temp, weather, humidity, pressure, speed } = req.body;
   const product = await Product.create({
     name,
     country,
     temp,
     weather,
-    humidity , 
+    humidity,
     pressure,
     speed
   });
@@ -35,15 +35,15 @@ router.post('/', async (req, res) => {
 });
 
 router.put('/:id', async (req, res) => {
-  const { name,country,temp,weather,humidity , pressure,speed } = req.body;
+  const { name, country, temp, weather, humidity, pressure, speed } = req.body;
   const product = await Product.findOne({
     where: {
       id: req.params.id
     }
   });
 
-  product.name= name;
-  product.country= country;
+  product.name = name;
+  product.country = country;
   product.temp = temp;
   product.weather = weather;
   product.humidity = humidity;

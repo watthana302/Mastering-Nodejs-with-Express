@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './WeatherCard.css';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+
 
 function WeatherCard() {
   const [weatherData, setWeatherData] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
-  const apiUrl = 'http://localhost:5000/products'; // Your Node.js API endpoint
-  const [editModeIndex, setEditModeIndex] = useState(-1); // New state for edit mode
+
+  const [setEditModeIndex] = useState(-1); // New state for edit mode
 
   const fetchWeather = async () => {
     try {
       const response = await axios.get(
         ` http://localhost:5000/products/${searchTerm}`
-      );      
+      );
       setWeatherData([...weatherData, response.data]);
       setSearchTerm('');
     } catch (error) {
@@ -35,16 +35,13 @@ function WeatherCard() {
   // const filteredWeatherData = weatherData.filter((city) => {
   //   return city.name.toLowerCase().includes(searchTerm.toLowerCase());
   // });
-  
+
   const svgStyle = {
     preserveAspectRatio: 'xMidYMid slice',
     viewBox: '10 10 80 80',
   };
 
-  const handleAddData = () => {
-    // Implement the logic to add new data to the Node.js backend here
-    // Example logic: use fetch or other methods to send data to the Node.js backend
-  };
+
 
   const updateWeather = async (index) => {
     try {
@@ -69,7 +66,7 @@ function WeatherCard() {
 
   return (
     <div className="weather-container">
-    
+
 
       <div className="weather-box">
         <nav className="navbar">
@@ -84,15 +81,15 @@ function WeatherCard() {
             className="search-bar"
           />
           <div className='GetButton'>
-          <button onClick={fetchWeather}>Get Weather</button>
+            <button onClick={fetchWeather}>Get Weather</button>
           </div>
         </div>
 
         {searchTerm && <h1>Weather Information</h1>}
-        { (
+        {(
           <div>
             <ul>
-              {weatherData.map((city,index) => (
+              {weatherData.map((city, index) => (
                 <div key={index} className="city-info">
                   <div>
                     {/* Input fields for editing */}
@@ -114,18 +111,18 @@ function WeatherCard() {
                     <li>Wind Speed: {city.speed}</li>
                   </ul>
                   <div className="action-buttons">
-                    
-                    
+
+
                     <button onClick={() => deleteWeather(index)}>Delete</button>
                   </div>
                 </div>
-            ))}
-          </ul>
-        </div>
+              ))}
+            </ul>
+          </div>
         )}
       </div>
       <div>
-      <svg
+        <svg
           style={svgStyle}
           dangerouslySetInnerHTML={{
             __html: `

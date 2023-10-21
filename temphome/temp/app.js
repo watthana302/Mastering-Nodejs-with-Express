@@ -13,11 +13,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
-app.use((req,res,next) =>{
-  res.header('Access-control-Allow-Origin','*');
-  res.header('Access-control-Allow-Header','Origin,X-Requested-With, Content-Type,Accept');
+app.use((req, res, next) => {
+  res.header('Access-control-Allow-Origin', '*');
+  res.header('Access-control-Allow-Header', 'Origin,X-Requested-With, Content-Type,Accept');
   next();
-  
+
 })
 
 

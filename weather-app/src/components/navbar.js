@@ -1,4 +1,4 @@
-import React  from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -7,10 +7,10 @@ import { Link } from 'react-router-dom';
 function Navbar({ className }) {
   return (
     <header className={className}>
-     <nav className="mainnav">
+      <nav className="mainnav">
         <ul>
           <li>
-            <Link to ="/">Home</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
             <Link to="/AddWeatherdata">Add WeatherData</Link>

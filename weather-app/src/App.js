@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 
 import React from 'react';
@@ -16,12 +16,12 @@ function App() {
   return (
     <div className="App">
 
-      <Navbar/>
+      <Navbar />
       <Routes> {/* Use Routes instead of Route */}
-            <Route path="/" element={< WeatherCard/>} /> 
-            <Route path="/AddWeatherData" element={< AddWeatherData/>} />
-            
-          </Routes>
+        <Route path="/" element={< WeatherCard />} />
+        <Route path="/AddWeatherData" element={< AddWeatherData />} />
+
+      </Routes>
     </div>
   );
 }

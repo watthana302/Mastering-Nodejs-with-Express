@@ -23,7 +23,7 @@ const Product = sequelize.define('Product', {
   speed: {
     type: DataTypes.STRING
   },
-  
+
 });
 
 module.exports = Product;
