@@ -15,6 +15,7 @@ function Navbar({ className }) {
           <li>
             <Link to="/AddWeatherdata">Add WeatherData</Link>
           </li>
+          
         </ul>
       </nav>
     </header>

@@ -104,11 +104,11 @@ function WeatherCard() {
                     {city.name}, {city.country}
                   </p>
                   <ul>
-                    <li>Temperature: {city.temp}</li>
-                    <li>Weather: {city.weather}</li>
-                    <li>Humidity: {city.humidity}</li>
-                    <li>Pressure: {city.pressure}</li>
-                    <li>Wind Speed: {city.speed}</li>
+                    <p>Weather: {city.weather}</p>
+                    <p>Temperature: {city.temp}</p>
+                    <p>Humidity: {city.humidity}</p>
+                    <p>Pressure: {city.pressure}</p>
+                    <p>Wind Speed: {city.speed}</p>
                   </ul>
                   <div className="action-buttons">
 
