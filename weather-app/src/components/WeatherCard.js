@@ -21,20 +21,13 @@ function WeatherCard() {
     }
   };
 
-  // useEffect(() => {
-  //   fetch(apiUrl)
-  //     .then((response) => response.json())
-  //     .then((data) => setWeatherData(data))
-  //     .catch((error) => console.error('Error fetching data:', error));
-  // }, []);
+
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
   };
 
-  // const filteredWeatherData = weatherData.filter((city) => {
-  //   return city.name.toLowerCase().includes(searchTerm.toLowerCase());
-  // });
+  
 
   const svgStyle = {
     preserveAspectRatio: 'xMidYMid slice',
@@ -126,7 +119,7 @@ function WeatherCard() {
           style={svgStyle}
           dangerouslySetInnerHTML={{
             __html: `
-          <svg preserveAspectRatio="xMidYMid slice" viewBox="10 10 80 80">
+          <svg preserveAspectRatio="xMidYMid slice" style="width: 100%; height: 100%;" viewBox="10 10 80 80">
             <defs>
                 <style>
                     @keyframes rotate {

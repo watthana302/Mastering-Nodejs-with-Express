@@ -28,6 +28,8 @@ Navbar.propTypes = {
 
 export default styled(Navbar)`
 .mainnav ul {
+  width: 215vh;
+  height: vh;
   list-style-type: none;
   margin: 0;
   padding: 0;
