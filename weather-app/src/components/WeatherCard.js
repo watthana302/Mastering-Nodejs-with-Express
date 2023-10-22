@@ -12,7 +12,7 @@ function WeatherCard() {
   const fetchWeather = async () => {
     try {
       const response = await axios.get(
-        ` http://localhost:5000/products/${searchTerm}`
+        ` http://localhost:5000/weathers/${searchTerm}`
       );
       setWeatherData([...weatherData, response.data]);
       setSearchTerm('');
@@ -39,7 +39,7 @@ function WeatherCard() {
   const updateWeather = async (index) => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/products/${searchTerm}`
+        `http://localhost:5000/weathers/${searchTerm}`
       );
 
       const updatedWeatherData = [...weatherData];
@@ -50,11 +50,18 @@ function WeatherCard() {
       console.error('Error updating weather:', error);
     }
   };
-
-  const deleteWeather = (index) => {
-    const updatedWeatherData = [...weatherData];
-    updatedWeatherData.splice(index, 1);
-    setWeatherData(updatedWeatherData);
+  const deleteWeather = async (index) => {
+    try {
+      const response = await axios.delete(
+        `http://localhost:5000/weathers/${index}`
+      );
+  
+      const updatedWeatherData = [...weatherData];
+      updatedWeatherData.splice(index, 1);
+      setWeatherData(updatedWeatherData);
+    } catch (error) {
+      console.error('Error delete weather:', error);
+    }
   };
 
   return (

@@ -21,7 +21,7 @@ const AddweatherData = () => {
       speed: windSpeed
     };
 
-    axios.post('http://localhost:5000/products', data)
+    axios.post('http://localhost:5000/weathers', data)
       .then(response => {
         console.log('Data sent successfully', response);
       })

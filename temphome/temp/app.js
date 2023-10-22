@@ -1,7 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 
-const productRoutes = require('./routes/products');
+const productRoutes = require('./weathers/weather.controller');
 const { connect, sync } = require('./config/database');
 const app = express();
 const cors = require('cors')
@@ -21,13 +21,7 @@ app.use((req, res, next) => {
 })
 
 
-// Setting up routes
-app.use('/products', productRoutes);
 
-// Creating a server
-app.listen(5000, () => {
-  console.log('Listening on port 5000');
-});
 
 async function initializeDatabase() {
   await connect();
@@ -35,3 +29,11 @@ async function initializeDatabase() {
 }
 
 initializeDatabase();
+
+// Setting up routes
+app.use('/weathers', productRoutes);
+
+// Creating a server
+app.listen(5000, () => {
+  console.log('Listening on port 5000');
+});
